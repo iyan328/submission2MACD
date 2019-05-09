@@ -239,7 +239,7 @@ else
     <br><br>
     Image to analyze:
     <input type="text" name="inputImage" id="inputImage"
-        value=".$blob->getUrl()." />
+        value="<?php $blob->getUrl() ?>" />
 	<button onclick="processImage()">Analyze image</button>
     <br><br>
     <div id="wrapper" style="width:1020px; display:table;">
