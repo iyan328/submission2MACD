@@ -166,6 +166,7 @@ else
     <html>
     <head>
         <title>Analyze Sample</title>
+	<!--<meta http-equiv="Content-Security-Policy" content="block-all-mixed-content"> -->
 	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
     </head>
