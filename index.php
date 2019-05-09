@@ -117,11 +117,11 @@ if (!isset($_GET["Cleanup"])) {
         echo "<br />";
 
         // Get blob.
-        echo "This is the content of the blob uploaded: ";
+        //echo "This is the content of the blob uploaded: ";
         //$blob = $blobClient->getBlob($containerName, $fileToUpload);
         //fpassthru($blob->getContentStream());
-        echo "<br />";
-        echo '<img src="'.$blob->getUrl().'"/>';
+        //echo "<br />";
+        //echo '<img src="'.$blob->getUrl().'"/>';
         echo "<br />";
     }
     catch(ServiceException $e){
@@ -235,11 +235,11 @@ else
     </script>
      
     <h1>Analyze image:</h1>
-    Enter the URL to an image, then click the <strong>Analyze image</strong> button.
+    <!--Enter the URL to an image, then click the <strong>Analyze image</strong> button. -->
     <br><br>
     Image to analyze:
     <input type="text" name="inputImage" id="inputImage"
-        value="http://upload.wikimedia.org/wikipedia/commons/3/3c/Shaki_waterfall.jpg" />
+        value=".$blob->getUrl()." />
 	<button onclick="processImage()">Analyze image</button>
     <br><br>
     <div id="wrapper" style="width:1020px; display:table;">
