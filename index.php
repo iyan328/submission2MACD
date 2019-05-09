@@ -50,7 +50,9 @@ $connectionString = "DefaultEndpointsProtocol=https;AccountName=".$account.";Acc
 // Create blob client.
 $blobClient = BlobRestProxy::createBlobService($connectionString);
 
-$fileToUpload = "HelloWorld.txt";
+//$fileToUpload = "HelloWorld.txt";
+$fileToUpload = "dicoding.jpg";
+
 
 if (!isset($_GET["Cleanup"])) {
     // Create container options object.
@@ -98,7 +100,8 @@ if (!isset($_GET["Cleanup"])) {
 
         // List blobs.
         $listBlobsOptions = new ListBlobsOptions();
-        $listBlobsOptions->setPrefix("HelloWorld");
+        //$listBlobsOptions->setPrefix("HelloWorld");
+        $listBlobsOptions->setPrefix("dicoding");
 
         echo "These are the blobs present in the container: ";
 
@@ -115,8 +118,10 @@ if (!isset($_GET["Cleanup"])) {
 
         // Get blob.
         echo "This is the content of the blob uploaded: ";
-        $blob = $blobClient->getBlob($containerName, $fileToUpload);
-        fpassthru($blob->getContentStream());
+        //$blob = $blobClient->getBlob($containerName, $fileToUpload);
+        //fpassthru($blob->getContentStream());
+        echo "<br />";
+        echo '<img src="'.$blob->getUrl().'"/>';
         echo "<br />";
     }
     catch(ServiceException $e){
@@ -158,6 +163,6 @@ else
 ?>
 
 
-<form method="post" action="phpQS.php?Cleanup&containerName=<?php echo $containerName; ?>">
+<!--<form method="post" action="phpQS.php?Cleanup&containerName=<?php echo $containerName; ?>">
     <button type="submit">Press to clean up all resources created by this sample</button>
-</form>
+</form> -->
